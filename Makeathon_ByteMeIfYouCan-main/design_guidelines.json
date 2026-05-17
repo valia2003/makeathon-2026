@@ -1,0 +1,152 @@
+{
+  "project_name": "Pathfinder",
+  "theme": "dark",
+  "archetype": "Archetype 5 (Jewel & Luxury) with Archetype 7 (Electric & Neon) accents",
+  "brand_mission": "Find your trail. Leave no trace.",
+  "visual_style": "Futuristic, cinematic, premium travel-tech startup, dark mode, glassmorphism cards, glowing trail lines.",
+  "colors": {
+    "background": {
+      "main": "#050907",
+      "secondary": "#0a120e",
+      "glass": "rgba(27, 59, 46, 0.4)",
+      "glass_light": "rgba(232, 225, 213, 0.05)"
+    },
+    "text": {
+      "primary": "#F2F0EB",
+      "secondary": "#A3ADAA",
+      "accent": "#00F0FF",
+      "dark": "#050907"
+    },
+    "brand": {
+      "forest_green": "#1B3B2E",
+      "midnight_black": "#050907",
+      "electric_cyan": "#00F0FF",
+      "earth_beige": "#E8E1D5",
+      "dark_green": "#0E2419"
+    },
+    "ui_elements": {
+      "border": "rgba(232, 225, 213, 0.1)",
+      "glowing_accent": "rgba(0, 240, 255, 0.5)",
+      "card_bg": "rgba(14, 36, 25, 0.6)"
+    }
+  },
+  "typography": {
+    "font_family": {
+      "heading": "Outfit, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "rules": {
+      "h1": "text-5xl md:text-6xl+ font-light tracking-tighter text-earth-beige",
+      "h2": "text-4xl md:text-5xl font-light tracking-tight text-white",
+      "h3": "text-2xl md:text-3xl font-medium tracking-tight text-white",
+      "body": "text-base md:text-lg font-light leading-relaxed text-secondary",
+      "overline": "text-xs font-mono uppercase tracking-[0.2em] text-electric_cyan"
+    }
+  },
+  "layout_spacing": {
+    "padding": {
+      "section_vertical": "py-24 md:py-32",
+      "container_horizontal": "px-6 md:px-12 lg:px-24",
+      "card": "p-8"
+    },
+    "grid": {
+      "bento_tetris": "grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-8",
+      "bento_dashboard": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+      "standard": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    }
+  },
+  "ui_components": {
+    "buttons": {
+      "primary": "bg-[#00F0FF] text-[#050907] font-medium px-8 py-4 rounded-full hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(0,240,255,0.4)]",
+      "secondary": "border border-[#E8E1D5]/20 backdrop-blur-md text-[#E8E1D5] px-8 py-4 rounded-full hover:bg-[#E8E1D5]/10 transition-all duration-300"
+    },
+    "cards": {
+      "glass": "bg-[#0E2419]/60 backdrop-blur-xl border border-[#E8E1D5]/10 rounded-2xl p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.4)] relative overflow-hidden",
+      "metric": "bg-[#050907] border-l-2 border-[#00F0FF] p-6 rounded-r-xl shadow-lg"
+    },
+    "badges": {
+      "sustainability": "bg-[#1B3B2E] text-[#E8E1D5] text-xs font-mono px-3 py-1 rounded-full border border-[#E8E1D5]/20 inline-flex items-center gap-2",
+      "weather": "bg-white/5 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full border border-white/10 inline-flex items-center gap-2"
+    },
+    "map": {
+      "style": "SVG stylized Greece map. Stroke color: rgba(255,255,255,0.1), Glowing trail lines: #00F0FF with drop-shadow glow. Clickable pins with pulse animation."
+    }
+  },
+  "media": {
+    "images": {
+      "hero_bg": "https://static.prod-images.emergentagent.com/jobs/4b882ed6-0c4e-445d-a9ec-c11ffed676fd/images/d43ce6433f1ebd177533c6a5013ffb440d1857f1ed8f63329278612b0784606e.png",
+      "ai_chat_bg": "https://static.prod-images.emergentagent.com/jobs/4b882ed6-0c4e-445d-a9ec-c11ffed676fd/images/7f25b254f24abc1be91acff59d72e108f5c7d4f1f256e226d2392c61f71828be.png",
+      "sustainability_bg": "https://static.prod-images.emergentagent.com/jobs/4b882ed6-0c4e-445d-a9ec-c11ffed676fd/images/148c0f73a84b498ab80cc7b584a34fce60f3db41786dd84618bb4b308ed8b133.png",
+      "overtourism_crowd_1": "https://images.unsplash.com/photo-1506755594592-349d12a7c52a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwxfHx0b3VyaXN0JTIwY3Jvd2R8ZW58MHx8fHwxNzc4OTIyNzQ0fDA&ixlib=rb-4.1.0&q=85",
+      "overtourism_crowd_2": "https://images.unsplash.com/photo-1573358695783-005699a7fc94?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwyfHx0b3VyaXN0JTIwY3Jvd2R8ZW58MHx8fHwxNzc4OTIyNzQ0fDA&ixlib=rb-4.1.0&q=85",
+      "hiking_authentic_1": "https://images.unsplash.com/photo-1687866979162-495885f06b3d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwyfHxncmVlY2UlMjBoaWtpbmd8ZW58MHx8fHwxNzc4OTIyNzQ0fDA&ixlib=rb-4.1.0&q=85",
+      "hiking_authentic_2": "https://images.unsplash.com/photo-1633092813838-64d3cc28e7e3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwzfHxncmVlY2UlMjBoaWtpbmd8ZW58MHx8fHwxNzc4OTIyNzQ0fDA&ixlib=rb-4.1.0&q=85"
+    },
+    "trail_cards": [
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/4b882ed6-0c4e-445d-a9ec-c11ffed676fd/images/fbd5438e2a1031abd5a0b18d3e4103ebe44cd093501eb54f2afe3d1bfd39792a.png",
+        "title": "Pindus Mountain Path",
+        "description": "Misty stone hiking path in ancient forest.",
+        "difficulty": "Moderate",
+        "duration": "4h 30m"
+      },
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/4b882ed6-0c4e-445d-a9ec-c11ffed676fd/images/3acd25739759ca0e9673a70287ac30474c6ede54e38c2bb8890f23a7847e1933.png",
+        "title": "Peloponnese Coastal Route",
+        "description": "Hidden coastal trail overlooking the sea.",
+        "difficulty": "Easy",
+        "duration": "2h 15m"
+      },
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/4b882ed6-0c4e-445d-a9ec-c11ffed676fd/images/5f7a57cbe21d69deda225077f836144defce9dbcdf22e41b6583c06438056288.png",
+        "title": "Deep Forest Waterfall",
+        "description": "Serene hidden waterfall in dark green forest.",
+        "difficulty": "Hard",
+        "duration": "6h 00m"
+      }
+    ]
+  },
+  "sections_instructions": {
+    "hero": {
+      "layout": "Min-h-screen, center aligned or split layout. Overlay hero_bg image with a heavy bg-gradient-to-r from-[#050907]/90 via-[#050907]/60 to-transparent for text contrast.",
+      "content": "Headline: 'Discover the Greece nobody else sees.' Subheadline: 'An AI trail companion that matches you with sustainable outdoor experiences across Greece.' Buttons: 'Start Your Journey' (Primary) and 'Explore Hidden Trails' (Secondary).",
+      "visuals": "Right side should feature a stylized glowing SVG Map of Greece with pulsating trail pins in electric cyan. Float small glassmorphic weather/crowd badges around the map."
+    },
+    "problem_overtourism": {
+      "layout": "Bento 'Tetris' Grid to create asymmetry.",
+      "content": "Tell the data story: 36M+ tourists, highly concentrated. Emphasize hidden trails vs crowded spots.",
+      "visuals": "Use grayscale overtourism photos tinted with dark forest green. Large typography for metrics."
+    },
+    "how_it_works": {
+      "layout": "4-step timeline layout connected by a 'Tracing Beam' - a glowing cyan line animation.",
+      "content": "1. Conversational AI Intake 2. Personalized Trail Matching 3. Sustainability Intelligence 4. Real-Time Adaptation."
+    },
+    "ai_chat_mockup": {
+      "layout": "Container with ai_chat_bg heavily blurred (backdrop-blur-3xl). Center the chat interface like a floating Apple Messages mockup but in dark mode glassmorphism.",
+      "content": "Show realistic user message (Easy/moderate near sea). AI reply with a trail card from media.trail_cards, map snippet, duration, weather, and a sustainability score badge."
+    },
+    "itinerary": {
+      "layout": "Grid split: Visuals left, Day plan right.",
+      "visuals": "Use Recharts for an elevation graph (stroke='#00F0FF', fill='url(#colorUv)' with a green-to-transparent gradient). Include a sleek weather timeline."
+    },
+    "sustainability": {
+      "layout": "Full width banner or large card using sustainability_bg with a dark overlay.",
+      "content": "Display: Crowd Reduction Score, Community Support Index, Trail Preservation Status, Low-Impact Travel Tips."
+    },
+    "advanced_ai": {
+      "layout": "3-column grid of glassmorphism cards using the 'Neumorphism' tactile variant (sharp inner contrasts).",
+      "content": "Real-Time Trail Condition Agent, Photo-to-Trail Matching, Dynamic Itinerary Adaptation."
+    },
+    "cta": {
+      "layout": "Massive padding (py-32), center aligned.",
+      "content": "Headline: 'The future of tourism is not more travelers. It is smarter journeys.' Primary button: 'Find Your Trail'."
+    }
+  },
+  "technical_rules": {
+    "accessibility": "All interactive elements (buttons, links, inputs, cards) MUST include a data-testid attribute in kebab-case. Contrast ratios must meet APCA standards.",
+    "components": "Use custom HTML/Tailwind for marketing layout (sections, asymmetric grids). Use Shadcn/UI primitives heavily customized (no standard vercel look) for complex interactive elements.",
+    "icons": "lucide-react or @phosphor-icons/react",
+    "motion": "Use framer-motion for staggering lists, hover states, and smooth scroll reveals. Use 'lenis' for smooth momentum scrolling."
+  }
+}

@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --pf-bg: #050907;
+    --pf-bg-2: #0a120e;
+    --pf-forest: #1B3B2E;
+    --pf-dark-green: #0E2419;
+    --pf-cyan: #00F0FF;
+    --pf-beige: #E8E1D5;
+    --pf-text-sec: #A3ADAA;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--pf-bg);
+    color: var(--pf-beige);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+::selection {
+    background: rgba(0, 240, 255, 0.3);
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track { background: #050907; }
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 240, 255, 0.2);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(0, 240, 255, 0.5); }
+
+.font-display { font-family: 'Outfit', sans-serif; }
+.font-body { font-family: 'Inter', sans-serif; }
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Glass utilities */
+.pf-glass {
+    background: rgba(14, 36, 25, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(232, 225, 213, 0.10);
+}
+.pf-glass-light {
+    background: rgba(232, 225, 213, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(232, 225, 213, 0.08);
+}
+.pf-glow-cyan {
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.25), 0 0 60px rgba(0, 240, 255, 0.08);
+}
+.pf-text-glow {
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+}
+
+/* Grain overlay */
+.pf-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Trail line glow animation */
+@keyframes pf-dash {
+    to { stroke-dashoffset: -200; }
+}
+.pf-trail-dash {
+    stroke-dasharray: 6 8;
+    animation: pf-dash 8s linear infinite;
+}
+
+/* Pulse pin */
+@keyframes pf-pulse {
+    0% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.6); opacity: 0.2; }
+    100% { transform: scale(1); opacity: 0.9; }
+}
+.pf-pin-pulse { animation: pf-pulse 2.4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+
+.pf-leaflet-map {
+    height: 420px;
+    width: 100%;
+    background: #050907;
+    border-radius: 1rem;
+    z-index: 1;
+}
+
+.pf-leaflet-map .leaflet-tile {
+    filter: saturate(0.55) hue-rotate(110deg) brightness(0.5) contrast(1.15);
+}
+
+.pf-leaflet-map .leaflet-control-attribution {
+    background: rgba(5, 9, 7, 0.72);
+    color: rgba(232, 225, 213, 0.58);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 8px;
+}
+
+.pf-leaflet-map .leaflet-control-attribution a {
+    color: rgba(0, 240, 255, 0.72);
+}
+
+.pf-leaflet-marker {
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+.pf-leaflet-marker-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    background: rgba(0, 240, 255, 0.26);
+    box-shadow: 0 0 26px rgba(0, 240, 255, 0.75);
+    animation: pf-pulse 2.4s ease-in-out infinite;
+}
+
+.pf-leaflet-marker-core {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    transform: translate(-50%, -50%);
+    border-radius: 999px;
+    background: #00F0FF;
+    box-shadow: 0 0 14px rgba(0, 240, 255, 0.9);
+}
+
+.pf-leaflet-marker.is-selected {
+    width: 30px;
+    height: 30px;
+}
+
+.pf-leaflet-marker.is-selected .pf-leaflet-marker-core {
+    width: 11px;
+    height: 11px;
+    border: 2px solid rgba(232, 225, 213, 0.9);
+}
+
+.pf-leaflet-tooltip {
+    min-width: 190px;
+    max-width: 260px;
+    background: rgba(8, 24, 20, 0.94) !important;
+    border: 1px solid rgba(0, 255, 255, 0.35) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 0 24px rgba(0, 255, 255, 0.28), 0 18px 48px rgba(0, 0, 0, 0.42) !important;
+    color: #E8E1D5 !important;
+    padding: 11px 13px !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    white-space: normal !important;
+}
+
+.pf-leaflet-tooltip::before {
+    border-top-color: rgba(8, 24, 20, 0.94) !important;
+}
+
+.leaflet-tooltip.pf-leaflet-tooltip,
+.leaflet-tooltip-top.pf-leaflet-tooltip,
+.leaflet-tooltip-bottom.pf-leaflet-tooltip,
+.leaflet-tooltip-left.pf-leaflet-tooltip,
+.leaflet-tooltip-right.pf-leaflet-tooltip {
+    background: rgba(8, 24, 20, 0.94) !important;
+    border-color: rgba(0, 255, 255, 0.35) !important;
+    color: #E8E1D5 !important;
+}
+
+.leaflet-tooltip-top.pf-leaflet-tooltip::before {
+    border-top-color: rgba(8, 24, 20, 0.94) !important;
+}
+
+.leaflet-tooltip-bottom.pf-leaflet-tooltip::before {
+    border-bottom-color: rgba(8, 24, 20, 0.94) !important;
+}
+
+.leaflet-tooltip-left.pf-leaflet-tooltip::before {
+    border-left-color: rgba(8, 24, 20, 0.94) !important;
+}
+
+.leaflet-tooltip-right.pf-leaflet-tooltip::before {
+    border-right-color: rgba(8, 24, 20, 0.94) !important;
+}
+
+.pf-leaflet-tooltip-name {
+    color: #ffffff;
+    font-family: "Outfit", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.pf-leaflet-tooltip-region {
+    margin-top: 4px;
+    color: #00F0FF;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px;
+    line-height: 1.2;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.pf-leaflet-tooltip-stats {
+    margin-top: 7px;
+    color: rgba(232, 225, 213, 0.78);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    line-height: 1.35;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    background: rgba(8, 24, 20, 0.92);
+    border: 1px solid rgba(0, 255, 255, 0.35);
+    box-shadow: 0 0 24px rgba(0, 255, 255, 0.28);
+    color: #E8E1D5;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.pf-leaflet-fallback {
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(0, 240, 255, 0.12);
+    border-radius: 1rem;
+    background: radial-gradient(circle at 50% 30%, rgba(0, 240, 255, 0.08), transparent 45%), rgba(5, 9, 7, 0.64);
+    padding: 2rem;
+}
+
+/* Float */
+@keyframes pf-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+.pf-float { animation: pf-float 6s ease-in-out infinite; }
+.pf-float-slow { animation: pf-float 9s ease-in-out infinite; }
+
+/* Fade up on scroll - simple */
+@keyframes pf-fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.pf-fade-up { animation: pf-fade-up 0.9s ease-out both; }
+
+/* Cyan blink caret */
+@keyframes pf-blink { 50% { opacity: 0; } }
+.pf-caret { animation: pf-blink 1s steps(2) infinite; }
+
+/* Gradient mask for edges */
+.pf-mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+@layer base {
+    :root {
+        --background: 160 30% 3%;
+        --foreground: 40 20% 92%;
+        --card: 158 45% 9%;
+        --card-foreground: 40 20% 92%;
+        --popover: 160 30% 5%;
+        --popover-foreground: 40 20% 92%;
+        --primary: 184 100% 50%;
+        --primary-foreground: 160 30% 3%;
+        --secondary: 158 45% 16%;
+        --secondary-foreground: 40 20% 92%;
+        --muted: 158 20% 14%;
+        --muted-foreground: 150 6% 65%;
+        --accent: 184 100% 50%;
+        --accent-foreground: 160 30% 3%;
+        --destructive: 0 62% 40%;
+        --destructive-foreground: 40 20% 92%;
+        --border: 40 15% 20%;
+        --input: 40 15% 18%;
+        --ring: 184 100% 50%;
+        --radius: 0.75rem;
+    }
+}
+
+@layer base {
+    body { @apply bg-background text-foreground; }
+}
